@@ -2,6 +2,7 @@
 import {useEffect, useState} from "react";
 import {getUser, getUsers} from "./services/user.service";
 import UserComponent from "./components/UserComponent";
+import {User} from "./components/User";
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
     return (
         <div>
             {/*<div>{chosenUser?.name}</div>*/}
-            {chosenUser && <User user={user}/>}
+            {chosenUser && <User user={User}/>}
             <hr/>
             {users.map(value => <UserComponent
                 key={value.id}
