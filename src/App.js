@@ -19,7 +19,7 @@ function App() {
     return (
         <div>
             {/*<div>{chosenUser?.name}</div>*/}
-
+            {chosenUser && <User user={user}/>}
             <hr/>
             {users.map(value => <UserComponent
                 key={value.id}

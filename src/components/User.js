@@ -1,4 +1,4 @@
-const User = ({user, setUserDetails}) => {
+const User = ({user}) => {
     const {id, name, username} = user;
 
     return (
