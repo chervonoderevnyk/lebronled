@@ -1,27 +1,30 @@
 // import './App.css';
 import {useEffect, useState} from "react";
-import {getUsers} from "./services/user.service";
+import {getUser, getUsers} from "./services/user.service";
 import UserComponent from "./components/UserComponent";
 
- function App() {
+function App() {
 
-let [users, setUsers] = useState([]);
-let [informUser,setInformUser] = useState(null);
-
+    let [users, setUsers] = useState([]);
+    let [chosenUser, setChosenUser] = useState(null);
 
     useEffect(() => {
         getUsers().then(value => setUsers(value.data));
-    },[])
+    }, [])
 
-     const infUser = (obj) => {
-        console.log(obj);
-     }
+    const chooseUser = (id) => {
+        getUser(id).then(value => setChosenUser(value.data));
+    }
 
     return (
         <div>
-            {
-                users.map(value => <UserComponent key={value.id} item={value} infUser={infUser}/>)
-            }
+            <div>{chosenUser?.name}</div>
+            <hr/>
+            {users.map(value => <UserComponent
+                key={value.id}
+                item={value}
+                chooseUser={chooseUser}
+            />)}
         </div>
     );
 }
