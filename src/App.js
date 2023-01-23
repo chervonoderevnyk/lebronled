@@ -23,7 +23,7 @@ function App() {
         <div>
             {/*<div>{chosenUser?.name}</div>*/}
             {/*{chosenUser && <User user={UserComponent}/>}*/}
-            {chosenUser && <UserInfo user={user}/>}
+            {chosenUser && <UserInfo user={UserInfo}/>}
 
             <hr/>
             {users.map(value => <UserComponent
