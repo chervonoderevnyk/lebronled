@@ -2,12 +2,14 @@
 import {useEffect, useState} from "react";
 import {getUser, getUsers} from "./services/user.service";
 import UserComponent from "./components/UserComponent";
-import {User} from "./components/User";
+import {UserInfo} from "./components/UserInfo";
 
 function App() {
 
     let [users, setUsers] = useState([]);
     let [chosenUser, setChosenUser] = useState(null);
+    // const [user] = useState(null);
+    // const [user] = useState([]);
 
     useEffect(() => {
         getUsers().then(value => setUsers(value.data));
@@ -20,7 +22,9 @@ function App() {
     return (
         <div>
             {/*<div>{chosenUser?.name}</div>*/}
-            {chosenUser && <User user={User}/>}
+            {/*{chosenUser && <User user={UserComponent}/>}*/}
+            {chosenUser && <UserInfo user={user}/>}
+
             <hr/>
             {users.map(value => <UserComponent
                 key={value.id}
