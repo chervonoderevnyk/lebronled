@@ -9,16 +9,18 @@ function App() {
     let [chosenUser, setChosenUser] = useState(null);
 
     useEffect(() => {
-        getUsers().then(value => setUsers(value.data));}, [])
+        getUsers().then(value => setUsers(value.data));
+    }, [])
 
     const chooseUser = (id) => {
-        getUser(id).then(value => setChosenUser(value.data));}
+        getUser(id).then(value => setChosenUser(value.data));
+    }
 
     return (
         <div>
             <h1>User info</h1>
 
-            {chosenUser && <UserInfo value = {chosenUser}/>}
+            {chosenUser && <UserInfo value={chosenUser}/>}
 
             <hr/>
 
@@ -27,6 +29,7 @@ function App() {
                 item={value}
                 chooseUser={chooseUser}/>)}
         </div>
-    );}
+    );
+}
 
 export {App}

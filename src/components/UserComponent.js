@@ -4,9 +4,10 @@ export default function UserComponent({item, chooseUser}) {
 
         <h2>{item.id} - {item.name}</h2>
 
-        <button onClick={()=>{
+        <button onClick={() => {
             chooseUser(item.id);
-        }}>Details</button>
+        }}>Details
+        </button>
 
     </div>);
 }
