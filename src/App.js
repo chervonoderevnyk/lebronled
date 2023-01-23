@@ -8,40 +8,26 @@ function App() {
 
     let [users, setUsers] = useState([]);
     let [chosenUser, setChosenUser] = useState(null);
-    // const [value, setUserInfo] = useState([]);
-    // console.log(value);
-    // const [user] = useState([]);
-    // let [value] = useState([]);
-
 
     useEffect(() => {
-        getUsers().then(value => setUsers(value.data));
-    }, [])
+        getUsers().then(value => setUsers(value.data));}, [])
 
     const chooseUser = (id) => {
-        getUser(id).then(value => setChosenUser(value.data));
-    }
+        getUser(id).then(value => setChosenUser(value.data));}
 
     return (
         <div>
-            {/*<div>{chosenUser?.value}</div>*/}
-            {/*{chosenUser && <UserInfo value={value}/>}*/}
-            {users.map(value => <UserInfo
-                key={value.id}
-                value={value}
-                chooseUser={chooseUser}
-            />)}
+            <h1>User info</h1>
 
+            {chosenUser && <UserInfo value = {chosenUser}/>}
 
             <hr/>
             {users.map(value => <UserComponent
                 key={value.id}
                 item={value}
-                chooseUser={chooseUser}
-            />)}
+                chooseUser={chooseUser}/>)}
         </div>
-    );
-}
+    );}
 
 export {App}
 
