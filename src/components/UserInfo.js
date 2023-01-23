@@ -1,8 +1,11 @@
-const UserInfo = ({user}) => {
-    const {id, name, username, email, address, street, suite, city, zipcode, geo, lat, lng} = user;
+const UserInfo = ({value}) => {
+    const {id, name, username, email, address, street,
+        suite, city, zipcode, geo, lat, lng} = value;
+    console.log(value);
 
     return (
         <div>
+
             <div>id: {id}</div>
             <div>name: {name}</div>
             <div>username: {username}</div>
