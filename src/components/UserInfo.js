@@ -1,17 +1,19 @@
-const UserInfo = ({value}) => {
-    const {id, name, username, email, address, street, city} = value;
-
-    console.log(value);
+let UserInfo = ({value}) => {
 
     return (
         <div>
-            <div>id: {id}</div>
-            <div>name: {name}</div>
-            <div>username: {username}</div>
-            <div>email: {email}</div>
-            <div>address: {address}</div>
-            <div>street: {street}</div>
-            <div>city: {city}</div>
+
+            <div>id: {value.id}</div>
+            <div>name: {value.name}</div>
+            <div>username: {value.username}</div>
+            <div>email: {value.email}</div>
+            <div>address: {value.address.zipcode}</div>
+            <div>city: {value.address.city}</div>
+            <div>street: {value.address.street}</div>
+            <div>company: {value.company.name}</div>
+            <div>company: {value.company.catchPhrase}</div>
+            <div>company: {value.company.bs}</div>
+            <div>phone: {value.phone}</div>
 
         </div>
     );
