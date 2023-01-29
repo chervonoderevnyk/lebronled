@@ -1,35 +1,20 @@
-import {useEffect, useState} from "react";
-import {getUser, getUsers} from "./services/user.service";
-import UserComponent from "./components/UserComponent";
-import {UserInfo} from "./components/UserInfo";
+import {useState} from "react";
 
-function App() {
+import Posts from "./components/Posts/Posts";
+import Users from "./components/Users/Users";
 
-    let [users, setUsers] = useState([]);
-    let [chosenUser, setChosenUser] = useState(null);
 
-    useEffect(() => {
-        getUsers().then(value => setUsers(value.data));
-    }, [])
-
-    const chooseUser = (id) => {
-        getUser(id).then(value => setChosenUser(value.data));
-    }
+const App = () => {
+    const [userId, setUserId] = useState(null);
 
     return (
         <div>
-            <h1>User info</h1>
-
-            {chosenUser && <UserInfo value={chosenUser}/>}
-
+            <Users setUserId={setUserId}/>
             <hr/>
-
-            {users.map(value => <UserComponent
-                key={value.id}
-                item={value}
-                chooseUser={chooseUser}/>)}
+            <hr/>
+            {userId && <Posts userId={userId}/>}
         </div>
     );
-}
+};
 
-export {App}
+export {App};
