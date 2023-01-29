@@ -1,4 +1,4 @@
-const Character = ({character}) => {
+const Character = ({character}) =>{
     const {id, name, status, species, gender, image} = character;
     return (
         <div>

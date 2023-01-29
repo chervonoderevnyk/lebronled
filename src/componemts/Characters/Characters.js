@@ -58,6 +58,6 @@ const Characters = () => {
                 }
             </div>
         );
-    };
+};
 
 export {Characters};

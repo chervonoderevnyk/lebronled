@@ -39,7 +39,6 @@ const Simpsons = () => {
                 simpsons.map(simpson=><Simpson key={simpson.id} simpson={simpson}/>)
             }
         </div>
-    );
-};
+    );};
 
 export {Simpsons};
