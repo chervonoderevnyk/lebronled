@@ -7,7 +7,8 @@ import {
 
 import {MainLayout} from "./layouts";
 import {AlbumsPage} from "./pages/AlbumsPage/AlbumsPage";
-
+import {LoginPage} from "./pages/LoginPage/LoginPage";
+import {RequireAuth} from "./hoc/RequireAuth";
 
 const App = () => {
     return (
@@ -17,7 +18,10 @@ const App = () => {
                     <Route index element={<HomePage/>}/>
                     <Route path={'users'} element={<UsersPage/>}/>
 
-                    <Route path={'posts'} element={<PostsPage/>}>
+                    <Route path={'posts'} element={
+                        <RequireAuth>
+                            <PostsPage/>
+                        </RequireAuth>}>
                         <Route path={':postId'} element={<PostDetailsPage/>}/>
                     </Route>
 
@@ -29,6 +33,7 @@ const App = () => {
                     </Route>
 
                     <Route path={'about'} element={<AboutPage/>}/>
+                    <Route path={'login'} element={<LoginPage/>}/>
                     <Route path={'*'} element={<NotFoundPage/>}/>
                 </Route>
             </Routes>
