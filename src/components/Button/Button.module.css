@@ -1,0 +1,16 @@
+.Button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightskyblue;
+    color: white;
+    height: 20px;
+    width: 60px;
+    margin: 12px;
+}
+
+.Button:hover{
+    background-color: coral;
+    color: cornflowerblue;
+    cursor: pointer;
+}
