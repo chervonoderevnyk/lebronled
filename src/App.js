@@ -1,7 +1,11 @@
+import {Header} from "./components";
+import {Users} from "./components";
+
 const App = () => {
     return (
         <div>
-App
+            <Header/>
+            <Users/>
         </div>
     );
 };
