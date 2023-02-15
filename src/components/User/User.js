@@ -4,7 +4,6 @@ import {userActions} from "../../redux";
 const User = ({user}) => {
 
     const {id, name, username} = user;
-
     const dispatch = useDispatch();
 
     return (

@@ -1,25 +1,26 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
-import {userActions} from "../../redux";
-import {User} from "../User/User";
+import {Post} from "../Post/Post";
+import {postActions} from "../../redux";
 
-const Users = () => {
+
+const Posts = () => {
 
     const dispatch = useDispatch();
-    const {users, errors, loading} = useSelector(state => state.users);
+    const {posts, errors, loading} = useSelector(state => state.posts);
 
     useEffect(() => {
-        dispatch(userActions.getAll())
+        dispatch(postActions.getAll())
     }, [])
 
     return (
         <div>
             {errors && JSON.stringify(errors)}
             {loading && <h1>Loading....................................</h1>}
-            {users.map(user => <User key={user.id} user={user}/>)}
+            {posts.map(post => <Post key={post.id} post={post}/>)}
         </div>
     );
 };
 
-export {Users};
+export {Posts};
