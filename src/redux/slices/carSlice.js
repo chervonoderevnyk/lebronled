@@ -41,7 +41,7 @@ const deleteById = createAsyncThunk(
     async ({id}, thunkAPI) => {
         try {
             await carService.deleteById(id)
-            thunkAPI.dispatch(getAll())
+            thunkAPI.dispatch(getAll({page:1}))
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }
@@ -53,7 +53,7 @@ const updateById = createAsyncThunk(
     async ({id, car}, thunkAPI) => {
         try {
             await carService.updateById(id, car);
-            thunkAPI.dispatch(getAll())
+            thunkAPI.dispatch(getAll({page:1}))
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }
