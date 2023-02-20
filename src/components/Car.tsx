@@ -20,6 +20,8 @@ const Car: FC<IProps> = ({car}) => {
     );
 };
 
-export {Car};
+export {
+    Car
+};
 
 

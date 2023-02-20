@@ -18,4 +18,6 @@ const Cars: FC = () => {
     );
 };
 
-export {Cars};
+export {
+    Cars
+};
