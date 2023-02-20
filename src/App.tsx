@@ -8,7 +8,5 @@ const App: FC = () => {
     );
 };
 
-export {
-    App
-}
+export {App}
 ;
