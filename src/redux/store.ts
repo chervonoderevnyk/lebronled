@@ -1,21 +1,20 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
-import {carReducer} from "./slices/car.slice";
+import {carReducer} from "./slices/carSlice";
 
 const rootReducer =combineReducers({
     carReducer
 });
 
-
 const setupStore= ()=>configureStore({
     reducer:rootReducer
 });
 
-type RootStore = ReturnType<typeof rootReducer>
+type RootState = ReturnType<typeof rootReducer>
 type AppStore = ReturnType<typeof setupStore>
 type AppDispatch =AppStore['dispatch']
 
 export type {
-    RootStore,
+    RootState,
     AppStore,
     AppDispatch
 };
